@@ -43,5 +43,5 @@ jobs:
         shell: powershell
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"1815ChristianSierra_CleanArchitecture1815" /o:"1815christiansierra" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          dotnet build -p:NuGetAudit:false
+          dotnet build -p:NuGetAudit=false
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
